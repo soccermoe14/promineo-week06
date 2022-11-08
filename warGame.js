@@ -23,3 +23,52 @@ Need to display the score for each player after all cards played
 Need to declare player with highest score winner
 DONT FORGET to run a chai mocha test on a function
 */
+
+/*class Card { //create a card class that will initialize the suit and rank for the cards
+    constructor (suit, rank) {
+        this.suit = suit;
+        this.rank = rank;
+    }
+}//not sure if I really need to make a card class or if I can just make a deck class
+
+const suit = ['Hearts', 'Diamonds', 'Clubs', 'Spades'];//declare string values for the suits in an array
+const rank = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King', 'Ace'];//declare string values for the ranks in the array
+
+console.log(suit);//prints all suits in the array suit
+console.log(rank);//prints all ranks in the array rank
+
+class Deck {
+    constructor() {
+        this.deck = [];
+
+        for(let suit in suits) {
+            for (let rank in ranks) {
+                this.deck.push(`${ranks[rank]} of ${suits[suit]}`)
+            }
+        }
+    }
+}
+    
+const deck1 = new Deck ();//declares variable new deck
+console.log(deck.deck1);//prints all 52 cards in deck with suit and rank
+**this did not work, printed the suit and rank arrays but then creates infinite loop. Need to try this in a different WebAssembly.*/
+
+class Deck {//create class for deck of cards blueprint
+    constructor () {
+        this.deck = [];//the deck will have values that are passed through this array
+
+        const suits = ['Hearts', 'Diamonds', 'Clubs', 'Spades'];//declare constant variable with array of string values for suits
+        const ranks = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King', 'Ace'];//declare constant variable with array of string values for ranks
+
+        for (let suit in suits) {
+            for (let rank in ranks) {//for loop that iterates over each suit and each rank
+              this.deck.push(`${ranks[rank]} of ${suits[suit]}`);//object that adds the suit of the card to the rank of the card culminating in a string
+            }
+          }
+        }
+      }
+const deck1 = new Deck();//declare new constant variable for a deck of cards
+console.log(deck1.deck);//prints all 52 cards in the deck
+    
+
+
