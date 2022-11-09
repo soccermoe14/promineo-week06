@@ -57,6 +57,7 @@ class Deck {//create class for deck of cards blueprint
     constructor () {
         this.deck = [];//the deck will have values that are passed through this array
 
+        
         const suits = ['Hearts', 'Diamonds', 'Clubs', 'Spades'];//declare constant variable with array of string values for suits
         const ranks = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King', 'Ace'];//declare constant variable with array of string values for ranks
 
@@ -67,8 +68,55 @@ class Deck {//create class for deck of cards blueprint
           }
         }
       }
-const deck1 = new Deck();//declare new constant variable for a deck of cards
-console.log(deck1.deck);//prints all 52 cards in the deck
-    
+      const deck1 = new Deck(); //this prints a deck of 52 cards suit+rank WORKS^^
+      //console.log(deck1.deck);
+  
+//need to shuffle cards before dealing next step below
+
+for (let i = deck1.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * i);
+    let temp = deck1[i];
+    deck1[i] = deck1[j];
+    deck1[j] = temp;
+}
+
+console.log(`Shuffled cards are:`);
+
+    for (let i = 0; i < 26; i++) {
+        console.log(`${deck1[i].rank} of ${deck1[i].suit}`);
+    }
+
+//^^need to figure out how to shuffle the cards and then print them shuffled because I cannot yet verify if the code actually shuffles them
+
+
+
+//deal 26 cards to each player
+
+class Players {//create class for blueprint of players
+    constructor (player1, player2) {
+        this.player1 = player1
+        this.player2 = player2
+    }
+}
+
+
+
+
+
+
+/* GO BACK TO THIS LATER
+function deal() {
+return this.deck.pop();
+}
+const deck1 = new Deck();
+new Deck.shuffle()
+console.log(deck1.deck);
+deck1.deal()
+console.log(deck1.deck);
+*/
+
+
+
+
 
 
